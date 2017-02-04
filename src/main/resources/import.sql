@@ -1,0 +1,15 @@
+insert into category(name) values ('display')
+insert into category(name) values ('mobile')
+insert into category(name) values ('camera')
+
+insert into product(name, category_id) values ('LG29UM58-P', '1')
+insert into product(name, category_id) values ('Dell UltraSharp U2515H', '1')
+insert into product(name, category_id) values ('BenQ XL2411Z', '1')
+insert into product(name, category_id) values ('Apple iPhone 7 32GB Black', '2')
+insert into product(name, category_id) values ('Xiaomi Redmi 4 32GB Silver', '2')
+insert into product(name, category_id) values ('Apple_iPhone 7 32GB Black', '2')
+insert into product(name, category_id) values ('Canon EOS 6D Body', '3')
+insert into product(name, category_id) values ('Nikon D3300 Kit 18-55mm VR II', '3')
+
+insert into user(name, password) values ('name1', '123')
+insert into user(name, password) values ('name2', '123')
