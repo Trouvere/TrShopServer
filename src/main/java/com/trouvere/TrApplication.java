@@ -15,7 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableSwagger2
 public class TrApplication {
-	// Инициализация логера
+	// Инициализация логера сделаю потом
 	private static final Logger log = Logger.getLogger(TrApplication.class);
 
 	public static void main(String[] args) throws Exception {
