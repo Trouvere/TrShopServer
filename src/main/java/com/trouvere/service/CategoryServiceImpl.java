@@ -31,7 +31,7 @@ public class CategoryServiceImpl implements CategoryService {
 
 	@Override
 	public List<Category> getAllCategory() {
-		return сategoryRepository.findAll();
+		return (List<Category>) сategoryRepository.findAll();
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class CategoryServiceImpl implements CategoryService {
 
 	@Override
 	public List<Product> getAllProduct() {
-		return productRepository.findAll();
+		return (List<Product>) productRepository.findAll();
 	}
 
 	@Override
@@ -84,7 +84,7 @@ public class CategoryServiceImpl implements CategoryService {
 
 	@Override
 	public List<User> getAllUser() {
-		return userRepository.findAll();
+		return (List<User>) userRepository.findAll();
 	}
 
 	@Override
@@ -114,8 +114,10 @@ public class CategoryServiceImpl implements CategoryService {
 
 	@Override
 	public Set<Product> saveProductInShoppingBag(long userID, Product product) {
-		Set<Product> shoppingBag = userRepository.findOne(userID).getShoppingBag();
+		User user = userRepository.findOne(userID);
+		Set<Product> shoppingBag = user.getShoppingBag();
 		shoppingBag.add(product);
+		userRepository.save(user);
 		return shoppingBag;
 	}
 
@@ -132,7 +134,11 @@ public class CategoryServiceImpl implements CategoryService {
 		User user = userRepository.findOne(userID);
 		Set<Product> product = user.getShoppingBag();
 		Orders order = new Orders(ordersDate, product, user);
-		return orderRepository.save(order);
+		orderRepository.save(order);
+		// List<Orders> orderList = userRepository.findOne(userID).getOrder();
+		// orderList.add(order);
+		// userRepository.save(user);
+		return order;
 	}
 
 	@Override
@@ -142,7 +148,11 @@ public class CategoryServiceImpl implements CategoryService {
 		Set<Product> productList = new HashSet<Product>();
 		productList.add(product);
 		Orders order = new Orders(ordersDate, productList, user);
-		return orderRepository.save(order);
+		orderRepository.save(order);
+		// List<Orders> orderList = userRepository.findOne(userID).getOrder();
+		// orderList.add(order);
+		// userRepository.save(user);
+		return order;
 	}
 
 }

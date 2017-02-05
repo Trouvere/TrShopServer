@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -20,11 +21,13 @@ public class User {
 
 	private String password;
 
-	@OneToMany
+	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 	private List<Orders> order;
 
+	// shoppingBag;
+	// @Column(name = "product")
 	@OneToMany
-	private Set<Product> shoppingBag;
+	private Set<Product> product;
 
 	public User() {
 		super();
@@ -63,11 +66,11 @@ public class User {
 	}
 
 	public Set<Product> getShoppingBag() {
-		return shoppingBag;
+		return product;
 	}
 
 	public void setShoppingBag(Set<Product> shoppingBag) {
-		this.shoppingBag = shoppingBag;
+		this.product = shoppingBag;
 	}
 
 }

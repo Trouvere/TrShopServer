@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Orders implements java.io.Serializable {
 
@@ -31,6 +33,7 @@ public class Orders implements java.io.Serializable {
 	@OneToMany
 	private Set<Product> product;
 
+	@JsonIgnore
 	@ManyToOne
 	private User user;
 
