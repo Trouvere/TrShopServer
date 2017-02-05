@@ -135,9 +135,6 @@ public class CategoryServiceImpl implements CategoryService {
 		Set<Product> product = user.getShoppingBag();
 		Orders order = new Orders(ordersDate, product, user);
 		orderRepository.save(order);
-		// List<Orders> orderList = userRepository.findOne(userID).getOrder();
-		// orderList.add(order);
-		// userRepository.save(user);
 		return order;
 	}
 
@@ -149,9 +146,6 @@ public class CategoryServiceImpl implements CategoryService {
 		productList.add(product);
 		Orders order = new Orders(ordersDate, productList, user);
 		orderRepository.save(order);
-		// List<Orders> orderList = userRepository.findOne(userID).getOrder();
-		// orderList.add(order);
-		// userRepository.save(user);
 		return order;
 	}
 

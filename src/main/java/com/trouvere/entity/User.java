@@ -3,6 +3,7 @@ package com.trouvere.entity;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -25,9 +26,10 @@ public class User {
 	private List<Orders> order;
 
 	// shoppingBag;
-	// @Column(name = "product")
+
 	@OneToMany
-	private Set<Product> product;
+	@Column(name = "product")
+	private Set<Product> shoppingBag;
 
 	public User() {
 		super();
@@ -66,11 +68,11 @@ public class User {
 	}
 
 	public Set<Product> getShoppingBag() {
-		return product;
+		return shoppingBag;
 	}
 
 	public void setShoppingBag(Set<Product> shoppingBag) {
-		this.product = shoppingBag;
+		this.shoppingBag = shoppingBag;
 	}
 
 }
