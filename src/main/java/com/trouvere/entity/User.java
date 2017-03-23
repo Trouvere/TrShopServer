@@ -1,78 +1,46 @@
 package com.trouvere.entity;
 
-import java.util.List;
-import java.util.Set;
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
+@Data
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@RequiredArgsConstructor
 @Entity
-public class User {
+public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue
 	private Long id;
 
+	@Column(nullable = false)
+	@NonNull
 	private String name;
 
+	@Column(nullable = false)
+	@NonNull
 	private String password;
 
-	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-	private List<Orders> order;
+	private String email;
 
-	// shoppingBag;
+	// @OneToOne(mappedBy = "parent", cascade = CascadeType.ALL, fetch =
+	// FetchType.LAZY, orphanRemoval = true)
+	// private List<Product> ordersList;
 
-	@OneToMany
-	@Column(name = "product")
-	private Set<Product> shoppingBag;
-
-	public User() {
-		super();
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public List<Orders> getOrder() {
-		return order;
-	}
-
-	public void setOrder(List<Orders> order) {
-		this.order = order;
-	}
-
-	public Set<Product> getShoppingBag() {
-		return shoppingBag;
-	}
-
-	public void setShoppingBag(Set<Product> shoppingBag) {
-		this.shoppingBag = shoppingBag;
-	}
+	@Enumerated(EnumType.STRING)
+	private RoleEnum role;
 
 }
