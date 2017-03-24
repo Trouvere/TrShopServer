@@ -3,10 +3,12 @@ package com.trouvere.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.trouvere.entity.Product;
 import com.trouvere.repository.ProductRepository;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired

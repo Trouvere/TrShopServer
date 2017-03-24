@@ -49,10 +49,12 @@ public class ShopController {
 		return service.getByCategoryIDProduct(categorytId);
 	}
 
-	@RequestMapping(value = "/category/{categoryID}/product/{productID}", method = RequestMethod.GET)
-	@ResponseBody
-	public Product getProduct(@PathVariable("categoryID") long categoryID, @PathVariable("productID") long productID) {
-		return service.getByIDProduct(productID);
-	}
+	// @RequestMapping(value = "/category/{categoryID}/product/{productID}",
+	// method = RequestMethod.GET)
+	// @ResponseBody
+	// public Product getProduct(@PathVariable("categoryID") long categoryID,
+	// @PathVariable("productID") long productID) {
+	// return service.getByCategoryIDProduct(categorytId)(productID);
+	// }
 
 }

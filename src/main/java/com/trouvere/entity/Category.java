@@ -1,12 +1,16 @@
 package com.trouvere.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.AccessLevel;
 import lombok.Data;
@@ -29,5 +33,8 @@ public class Category implements Serializable {
 	@Column(nullable = false)
 	@NonNull
 	private String name;
+
+	@OneToMany(targetEntity = Product.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<Product> product;
 
 }

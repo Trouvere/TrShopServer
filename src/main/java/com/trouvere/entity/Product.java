@@ -2,15 +2,14 @@ package com.trouvere.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 import lombok.AccessLevel;
 import lombok.Data;
@@ -34,11 +33,11 @@ public class Product implements Serializable {
 	@NonNull
 	private String name;
 
-	@Autowired
+	// @JsonIgnore
 	@Column(nullable = false)
 	@NonNull
-	@ManyToOne
-	@JoinColumn(name = "category_id", nullable = false)
+	@ManyToOne(targetEntity = Category.class, cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY)
+	// @JoinColumn(name = "category_id", nullable = false)
 	private Category category;
 
 	@Column(nullable = false)
