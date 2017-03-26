@@ -17,6 +17,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @RequiredArgsConstructor
+
 @Entity
 public class Category implements Serializable {
 
