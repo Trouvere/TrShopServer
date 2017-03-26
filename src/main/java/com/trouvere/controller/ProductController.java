@@ -15,9 +15,8 @@ import com.trouvere.service.ProductService;
 
 @RestController
 
-@RequestMapping(value = "/modification/product")
-// @RequestMapping(value = "/modification", produces =
-// MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/product")
+
 public class ProductController {
 	@Autowired
 	private ProductService service;

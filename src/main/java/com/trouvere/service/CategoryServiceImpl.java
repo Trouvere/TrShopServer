@@ -47,7 +47,7 @@ public class CategoryServiceImpl implements CategoryService {
 	@Override
 	public List<Product> getByCategoryIDProduct(long categorytId) {
 		Category category = сategoryRepository.findOne(categorytId);
-		return productRepository.findByCategory(category);
+		return getByCategoryProduct(category);
 	}
 
 }

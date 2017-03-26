@@ -36,10 +36,6 @@ public class User implements Serializable {
 
 	private String email;
 
-	// @OneToOne(mappedBy = "parent", cascade = CascadeType.ALL, fetch =
-	// FetchType.LAZY, orphanRemoval = true)
-	// private List<Product> ordersList;
-
 	@Enumerated(EnumType.STRING)
 	private RoleEnum role;
 

@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.trouvere.entity.Category;
+import com.trouvere.entity.Product;
 import com.trouvere.service.CategoryService;
 
 @RestController
 
 @RequestMapping(value = "/category")
-// @RequestMapping(value = "/modification", produces =
-// MediaType.APPLICATION_JSON_VALUE)
+
 public class CategoryController {
 	@Autowired
 	private CategoryService service;
@@ -44,6 +44,12 @@ public class CategoryController {
 	@ResponseBody
 	public void deleteCategory(@PathVariable long categoryID) {
 		service.removeCategory(categoryID);
+	}
+
+	@RequestMapping(value = "/{categoryID}/product", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Product> getByCategoryProduct(@PathVariable long categorytId) {
+		return service.getByCategoryIDProduct(categorytId);
 	}
 
 }
