@@ -34,7 +34,6 @@ public class Orders implements java.io.Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date ordersDate;
 

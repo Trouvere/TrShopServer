@@ -41,7 +41,7 @@ public class ProductController {
 
 	@RequestMapping(value = "/{productID}", method = RequestMethod.DELETE)
 	@ResponseBody
-	public void deleteProduct(@PathVariable long productID) {
+	public void deleteProduct(@PathVariable("productID") long productID) {
 		service.removeProduct(productID);
 	}
 

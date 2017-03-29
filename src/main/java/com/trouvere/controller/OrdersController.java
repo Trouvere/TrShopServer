@@ -41,11 +41,11 @@ public class OrdersController {
 
 	@RequestMapping(value = "/{ordersID}", method = RequestMethod.DELETE)
 	@ResponseBody
-	public String deleteOrders(@PathVariable long ordersID) {
+	public String deleteOrders(@PathVariable("ordersID") long ordersID) {
 		return service.removeOrders(ordersID);
 	}
 
-	@RequestMapping(value = "/{ordersID/payOrders}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{ordersID}/payOrders", method = RequestMethod.GET)
 	@ResponseBody
 	public Orders payOrders(@PathVariable("ordersID") long ordersID) {
 		return service.payOrders(ordersID);

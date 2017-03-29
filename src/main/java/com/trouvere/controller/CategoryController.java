@@ -42,13 +42,13 @@ public class CategoryController {
 
 	@RequestMapping(value = "/{categoryID}", method = RequestMethod.DELETE)
 	@ResponseBody
-	public void deleteCategory(@PathVariable long categoryID) {
+	public void deleteCategory(@PathVariable("categoryID") long categoryID) {
 		service.removeCategory(categoryID);
 	}
 
 	@RequestMapping(value = "/{categoryID}/product", method = RequestMethod.GET)
 	@ResponseBody
-	public List<Product> getByCategoryProduct(@PathVariable long categorytId) {
+	public List<Product> getByCategoryProduct(@PathVariable("categoryID") long categorytId) {
 		return service.getByCategoryIDProduct(categorytId);
 	}
 
