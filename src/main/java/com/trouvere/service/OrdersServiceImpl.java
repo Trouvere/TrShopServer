@@ -28,11 +28,11 @@ public class OrdersServiceImpl implements OrdersService {
 	@Override
 	public String saveOrders(Orders orders) {
 		String s;
-		if (isOrdersPaid(orders)) {
+		if (!isOrdersPaid(orders)) {
 			ordersRepository.save(orders);
-			s = "Orders сохранён";
+			s = "Orders saved";
 		} else {
-			s = "Нельзя изменять оплаченные заказы";
+			s = "You can not change paid orders";
 		}
 		return s;
 	}
@@ -41,11 +41,12 @@ public class OrdersServiceImpl implements OrdersService {
 	public String removeOrders(long id) {
 		Orders orders = ordersRepository.findOne(id);
 		String s;
-		if (isOrdersPaid(orders)) {
+		if (!isOrdersPaid(orders)) {
 			ordersRepository.delete(id);
-			s = "Orders удалён";
+			s = "Orders deleted";
 		} else {
-			s = "Нельзя изменять оплаченные заказы";
+			// Нельзя изменять оплаченные заказы
+			s = "You can not change paid orders";
 		}
 		return s;
 	}
@@ -53,10 +54,12 @@ public class OrdersServiceImpl implements OrdersService {
 	@Override
 	public Orders payOrders(long id) {
 		Orders orders = ordersRepository.findOne(id);
-		Date ordersDate = new Date();
-		orders.setOrdersDate(ordersDate);
-		orders.setPaid(true);
-		ordersRepository.save(orders);
+		if (!isOrdersPaid(orders)) {
+			Date ordersDate = new Date();
+			orders.setOrdersDate(ordersDate);
+			orders.setPaid(true);
+			ordersRepository.save(orders);
+		}
 		return orders;
 	}
 
