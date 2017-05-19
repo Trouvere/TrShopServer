@@ -19,6 +19,13 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+
 		<!-- swagger -->
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -40,13 +47,13 @@
 		</dependency>
 
 
-<!-- !for mysql -->
+		<!-- !for mysql -->
 		<dependency>
-		<groupId>mysql</groupId>
-		<artifactId>mysql-connector-java</artifactId>
-		<version>${mysql.version}</version>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
 		</dependency>
-<!-- !for mysql -->
+		<!-- !for mysql -->
 
 
 		<dependency>
