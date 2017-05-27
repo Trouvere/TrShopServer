@@ -13,3 +13,7 @@ insert into product(name, category_id, price) values ('Nikon D3300 Kit 18-55mm V
 
 insert into user(name, password, role) values ('name1', '123', 'USER')
 insert into user(name, password, role) values ('name2', '123', 'ADMIN')
+
+
+insert into heroes(name) values ('name1')
+insert into heroes(name) values ('name2')
