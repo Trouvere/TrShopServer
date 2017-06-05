@@ -15,5 +15,9 @@ insert into user(name, password, role) values ('name1', '123', 'USER')
 insert into user(name, password, role) values ('name2', '123', 'ADMIN')
 
 
-insert into heroes(name) values ('name1')
-insert into heroes(name) values ('name2')
+insert into heroesserv(name) values ('name1')
+insert into heroesserv(name) values ('name2')
+
+insert into metanit(name, age) values ('name1', '1')
+insert into metanit(name, age) values ('name2', '2')
+

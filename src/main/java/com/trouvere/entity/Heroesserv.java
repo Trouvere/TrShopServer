@@ -18,7 +18,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Entity
 
-public class Heroes implements Serializable {
+public class Heroesserv implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

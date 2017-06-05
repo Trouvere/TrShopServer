@@ -3,9 +3,9 @@ package com.trouvere.repository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.trouvere.entity.Heroesserv;
+import com.trouvere.entity.Metanit;
 
 @Repository
-public interface HeroesRepository extends CrudRepository<Heroesserv, Long> {
+public interface MetanitRepository extends CrudRepository<Metanit, Long> {
 
 }
