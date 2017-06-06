@@ -44,7 +44,7 @@ public class Orders implements java.io.Serializable {
 	@JoinColumn(nullable = false)
 	@NonNull
 	@ManyToOne
-	private User user;
+	private User1 user;
 
 	@Column(nullable = false)
 	@NonNull

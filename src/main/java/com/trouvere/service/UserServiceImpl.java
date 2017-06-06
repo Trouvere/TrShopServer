@@ -6,31 +6,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.trouvere.entity.Orders;
-import com.trouvere.entity.User;
+import com.trouvere.entity.User1;
 import com.trouvere.repository.OrdersRepository;
-import com.trouvere.repository.UserRepository;
+import com.trouvere.repository.User1Repository;
 
 @Service
 public class UserServiceImpl implements UserService {
 
 	@Autowired
-	private UserRepository userRepository;
+	private User1Repository userRepository;
 
 	@Autowired
 	private OrdersRepository ordersRepository;
 
 	@Override
-	public List<User> getAllUser() {
-		return (List<User>) userRepository.findAll();
+	public List<User1> getAllUser() {
+		return (List<User1>) userRepository.findAll();
 	}
 
 	@Override
-	public User getByIDUser(long userID) {
+	public User1 getByIDUser(long userID) {
 		return userRepository.findOne(userID);
 	}
 
 	@Override
-	public User saveUser(User user) {
+	public User1 saveUser(User1 user) {
 		return userRepository.save(user);
 	}
 
@@ -40,19 +40,19 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<Orders> getAllOrderByUser(User user) {
+	public List<Orders> getAllOrderByUser(User1 user) {
 		return ordersRepository.findByUser(user);
 	}
 
 	@Override
 	public List<Orders> getAllOrderByUserID(long userID) {
-		User user = userRepository.findOne(userID);
+		User1 user = userRepository.findOne(userID);
 		return getAllOrderByUser(user);
 	}
 
 	@Override
 	public Orders newOrders(long userID) {
-		User user = userRepository.findOne(userID);
+		User1 user = userRepository.findOne(userID);
 		Orders orders = new Orders(user, false);
 		ordersRepository.save(orders);
 		return orders;

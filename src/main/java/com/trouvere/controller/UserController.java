@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.trouvere.entity.Orders;
-import com.trouvere.entity.User;
+import com.trouvere.entity.User1;
 import com.trouvere.service.UserService;
 
 @Controller
@@ -22,19 +22,19 @@ public class UserController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
-	public List<User> getAllUser() {
+	public List<User1> getAllUser() {
 		return service.getAllUser();
 	}
 
 	@RequestMapping(value = "/{userID}", method = RequestMethod.GET)
 	@ResponseBody
-	public User getUser(@PathVariable("userID") long userID) {
+	public User1 getUser(@PathVariable("userID") long userID) {
 		return service.getByIDUser(userID);
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseBody
-	public User saveProduct(@RequestBody User user) {
+	public User1 saveProduct(@RequestBody User1 user) {
 		return service.saveUser(user);
 	}
 
