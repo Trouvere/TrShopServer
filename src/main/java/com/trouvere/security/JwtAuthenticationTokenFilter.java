@@ -36,9 +36,9 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 			throws ServletException, IOException {
 		String authToken = request.getHeader(this.tokenHeader);
 		// If add "Bearer "
-		if (authToken.startsWith("Bearer ")) {
-			authToken = authToken.substring(7);
-		}
+		// if (authToken.startsWith("Bearer ")) {
+		// authToken = authToken.substring(7);
+		// }
 		// If add "Bearer "
 		String username = jwtTokenUtil.getUsernameFromToken(authToken);
 

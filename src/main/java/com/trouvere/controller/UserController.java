@@ -15,7 +15,7 @@ import com.trouvere.entity.User1;
 import com.trouvere.service.UserService;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/user1")
 public class UserController {
 	@Autowired
 	private UserService service;
