@@ -1,6 +1,7 @@
 package com.trouvere.security;
 
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -34,7 +35,17 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws ServletException, IOException {
-		String authToken = request.getHeader(this.tokenHeader);
+		String authToken = request.getHeader("Authorization");
+		Enumeration<String> eny = ((Enumeration<String>) request.getHeaderNames());
+
+		while (eny.hasMoreElements()) {
+			System.out.println((String) eny.nextElement());
+
+		}
+		;
+
+		System.out.println(authToken);
+
 		// If add "Bearer "
 		// if (authToken.startsWith("Bearer ")) {
 		// authToken = authToken.substring(7);
