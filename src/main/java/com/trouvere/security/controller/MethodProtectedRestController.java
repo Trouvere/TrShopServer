@@ -17,6 +17,11 @@ public class MethodProtectedRestController {
 	 * hasRole expression assumes a 'ROLE_' prefix on all role names. So 'ADMIN'
 	 * here is actually stored as 'ROLE_ADMIN' in database!
 	 **/
+
+	// @ApiImplicitParams({
+	// @ApiImplicitParam(name = "Authorization", paramType = "header", dataType
+	// = "string", required = true, defaultValue = "Token <paste_token_here>")
+	// })
 	@RequestMapping(method = RequestMethod.GET)
 	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> getProtectedGreeting() {
