@@ -1,4 +1,6 @@
-package com.trouvere.entityKTP;
+package com.trouvere.KTP;
+
+import com.trouvere.KTP.entity.TypeKTP;
 
 public abstract class AbstractKTP {
 

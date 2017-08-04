@@ -1,4 +1,4 @@
-package com.trouvere.entityKTP;
+package com.trouvere.KTP.entity;
 
 import java.io.Serializable;
 

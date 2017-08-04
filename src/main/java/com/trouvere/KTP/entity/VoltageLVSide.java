@@ -1,4 +1,4 @@
-package com.trouvere.entityKTP;
+package com.trouvere.KTP.entity;
 
 import java.io.Serializable;
 
@@ -19,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 
 @Entity
-public class ClimaticZone implements Serializable {
+public class VoltageLVSide implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -29,6 +29,6 @@ public class ClimaticZone implements Serializable {
 
 	@Column(nullable = false)
 	@NonNull
-	private String value;
+	private double value;
 
 }

@@ -1,4 +1,4 @@
-package com.trouvere.entityKTP;
+package com.trouvere.KTP.controller;
 
 import java.util.List;
 
@@ -10,11 +10,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.trouvere.KTP.entity.TypeKTP;
+import com.trouvere.KTP.service.TypeKTPService;
+
 @RestController
 
-@RequestMapping(value = "/TypeKTP")
+@RequestMapping(value = "/modelKTP")
 
-public class TypeKTPController {
+public class ModelKTPController {
 	@Autowired
 	private TypeKTPService service;
 
@@ -26,7 +29,7 @@ public class TypeKTPController {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	@ResponseBody
-	public TypeKTP getByIDCategory(@PathVariable("id") long id) {
+	public TypeKTP getByID(@PathVariable("id") long id) {
 		return service.getByID(id);
 	}
 

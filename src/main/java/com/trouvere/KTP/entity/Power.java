@@ -1,4 +1,4 @@
-package com.trouvere.entityKTP;
+package com.trouvere.KTP.entity;
 
 import java.io.Serializable;
 
@@ -17,7 +17,6 @@ import lombok.RequiredArgsConstructor;
 @Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @RequiredArgsConstructor
-
 @Entity
 public class Power implements Serializable {
 

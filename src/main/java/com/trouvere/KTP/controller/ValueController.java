@@ -1,4 +1,4 @@
-package com.trouvere.entityKTP;
+package com.trouvere.KTP.controller;
 
 import java.util.List;
 
@@ -10,36 +10,50 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.trouvere.KTP.ModelAllValueKTP;
+import com.trouvere.KTP.entity.TypeKTP;
+import com.trouvere.KTP.service.PowerService;
+import com.trouvere.KTP.service.TypeKTPService;
+
 @RestController
 
-@RequestMapping(value = "/modelKTP")
+@RequestMapping(value = "/value")
 
-public class ModelKTPController {
+public class ValueController {
 	@Autowired
-	private TypeKTPService service;
+	private TypeKTPService typeKTPService;
+	@Autowired
+	private PowerService powerService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
-	public List<TypeKTP> getAll() {
-		return service.getAll();
+	public ModelAllValueKTP getAll() {
+
+		return new ModelAllValueKTP(getAllTypeKTP(), getAllPower());
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/typeKTP", method = RequestMethod.GET)
 	@ResponseBody
-	public TypeKTP getByIDCategory(@PathVariable("id") long id) {
-		return service.getByID(id);
+	public List<String> getAllTypeKTP() {
+		return typeKTPService.getAllValue();
+	}
+
+	@RequestMapping(value = "/power", method = RequestMethod.GET)
+	@ResponseBody
+	public List<String> getAllPower() {
+		return powerService.getAllValue();
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseBody
 	public TypeKTP save(@RequestBody TypeKTP typeKTP) {
-		return service.save(typeKTP);
+		return typeKTPService.save(typeKTP);
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	@ResponseBody
 	public void delete(@PathVariable("id") long id) {
-		service.remove(id);
+		typeKTPService.remove(id);
 	}
 
 }

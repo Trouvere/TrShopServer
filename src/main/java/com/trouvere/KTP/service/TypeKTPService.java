@@ -1,6 +1,8 @@
-package com.trouvere.entityKTP;
+package com.trouvere.KTP.service;
 
 import java.util.List;
+
+import com.trouvere.KTP.entity.TypeKTP;
 
 public interface TypeKTPService {
 

@@ -1,4 +1,6 @@
-package com.trouvere.entityKTP;
+package com.trouvere.KTP;
+
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,11 +10,11 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class ModelKTP {
+public class ModelAllValueKTP {
 
-	private String typeID;
+	private List<String> typeKTPAllField;
 
-	private int powerID;
+	private List<String> powerAllField;
 
 	// private String climaticZone;
 	//

@@ -1,10 +1,13 @@
-package com.trouvere.entityKTP;
+package com.trouvere.KTP.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.trouvere.KTP.entity.TypeKTP;
+import com.trouvere.KTP.repositori.TypeKTPRepository;
 
 @Service
 public class TypeKTPServiceImpl implements TypeKTPService {
