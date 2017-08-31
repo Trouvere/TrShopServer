@@ -62,18 +62,18 @@
 
 
 		<!-- !for mysql -->
-<!-- 		<dependency> -->
-<!-- 		<groupId>mysql</groupId> -->
-<!-- 		<artifactId>mysql-connector-java</artifactId> -->
-<!-- 		<version>${mysql.version}</version> -->
-<!-- 		</dependency> -->
+		<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>${mysql.version}</version>
+		</dependency>
 		<!-- !for mysql -->
 
 
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.h2database</groupId> -->
+<!-- 			<artifactId>h2</artifactId> -->
+<!-- 		</dependency> -->
 
 		<dependency>
 			<groupId>log4j</groupId>
