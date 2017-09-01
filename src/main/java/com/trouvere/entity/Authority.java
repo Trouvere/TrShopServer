@@ -10,25 +10,27 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
+import lombok.AccessLevel;
 import lombok.Data;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
-@RequiredArgsConstructor
-
+@ToString(exclude = "users")
 @Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+
 @Table(name = "AUTHORITY")
 public class Authority {
 
 	@Id
 	@Column(name = "ID", unique = true)
-
 	private Long id;
 
 	@Column(name = "NAME", length = 50)
-	@NonNull
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private AuthorityName name;
 

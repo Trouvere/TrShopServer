@@ -13,15 +13,16 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.AccessLevel;
 import lombok.Data;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Data
-@RequiredArgsConstructor
-
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+// @RequiredArgsConstructor
 @Entity
 @Table(name = "USER")
 public class User {
@@ -31,37 +32,37 @@ public class User {
 	private Long id;
 
 	@Column(name = "USERNAME", length = 50, unique = true)
-	@NonNull
+	@NotNull
 	@Size(min = 4, max = 50)
 	private String username;
 
 	@Column(name = "PASSWORD", length = 100)
-	@NonNull
+	@NotNull
 	@Size(min = 4, max = 100)
 	private String password;
 
 	@Column(name = "FIRSTNAME", length = 50)
-	@NonNull
+	@NotNull
 	@Size(min = 4, max = 50)
 	private String firstname;
 
 	@Column(name = "LASTNAME", length = 50)
-	@NonNull
+	@NotNull
 	@Size(min = 4, max = 50)
 	private String lastname;
 
 	@Column(name = "EMAIL", length = 50)
-	@NonNull
+	@NotNull
 	@Size(min = 4, max = 50)
 	private String email;
 
 	@Column(name = "ENABLED")
-	@NonNull
+	@NotNull
 	private Boolean enabled;
 
 	@Column(name = "LASTPASSWORDRESETDATE")
 	@Temporal(TemporalType.TIMESTAMP)
-	@NonNull
+	@NotNull
 	private Date lastPasswordResetDate;
 
 	@ManyToMany(fetch = FetchType.EAGER)
