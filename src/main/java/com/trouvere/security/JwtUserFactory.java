@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-import com.trouvere.security.entity.Authority;
-import com.trouvere.security.entity.User;
+import com.trouvere.entity.Authority;
+import com.trouvere.entity.User;
 
 public final class JwtUserFactory {
 

@@ -3,22 +3,24 @@ package com.trouvere.service;
 import java.util.List;
 
 import com.trouvere.entity.Orders;
-import com.trouvere.entity.User1;
+import com.trouvere.entity.User;
 
 //Разделить на несколько сервисов
 public interface UserService {
 
-	List<User1> getAllUser();
+	List<User> getAllUser();
 
-	User1 getByIDUser(long userID);
+	User getByIDUser(long userID);
 
-	User1 saveUser(User1 user);
+	User saveUser(User user);
 
 	void removeUser(long id);
 
-	List<Orders> getAllOrderByUser(User1 user);
+	List<Orders> getAllOrderByUser(User user);
 
 	List<Orders> getAllOrderByUserID(long userID);
 
 	Orders newOrders(long userID);
+
+	User getByUsernameUser(String username);
 }

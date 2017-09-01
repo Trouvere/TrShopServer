@@ -6,9 +6,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.trouvere.entity.User;
 import com.trouvere.security.JwtUserFactory;
-import com.trouvere.security.entity.User;
-import com.trouvere.security.repository.UserRepository;
+import com.trouvere.service.UserService;
 
 /**
  * Created by stephan on 20.03.16.
@@ -17,11 +17,15 @@ import com.trouvere.security.repository.UserRepository;
 public class JwtUserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
-	private UserRepository userRepository;
+	private UserService service;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userRepository.findByUsername(username);
+		System.out.println("1111111111111111111");
+		System.out.println(username);
+		User user = service.getByUsernameUser(username);
+		System.out.println(user);
+		System.out.println("1111111111111111111");
 
 		if (user == null) {
 			throw new UsernameNotFoundException(String.format("No user found with username '%s'.", username));
